@@ -6,5 +6,8 @@ namespace DatabaseService
 {
     interface IDatabaseService
     {
+        List<Stock> GetStockData(string symbol, int numDaysData);
+
+        
     }
 }

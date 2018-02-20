@@ -42,8 +42,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Stock.cs" />
+    <Compile Include="Models\StockCandle.cs" />
+    <Compile Include="Services\Depricated\HistDatasetService.cs" />
     <Compile Include="Services\IDatabaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\StockHistoryService.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
