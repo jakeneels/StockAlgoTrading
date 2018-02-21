@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace StockService.Models
 {
     public class KeyStatsData
-    {
+    { // serialize
         public string CompanyName { get; set; }
         public decimal MarketCap { get; set; }
         public decimal beta { get; set; }
@@ -35,8 +35,8 @@ namespace StockService.Models
         public double TtmEPS { get; set; }
         public decimal RevenuePerShare { get; set; }
         public decimal RevenuePerEmployee { get; set; }
-        public double peRatioHigh { get; set; }
-        public double peRatioLow { get; set; }
+        public double PeRatioHigh { get; set; }
+        public double PeRatioLow { get; set; }
         public double EPSSurpriseDollar { get; set; } //unknown return type, api docs say null
         public double EPSSurprisePercent { get; set; }
         public double ReturnOnAssets { get; set; }

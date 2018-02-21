@@ -56,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DatabaseService\DatabaseService.csproj">
+      <Project>{80B1A004-7C68-4A8A-AE77-BDDF1763A40C}</Project>
+      <Name>DatabaseService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\StockService\StockService.csproj">
       <Project>{817f4e5e-a149-4431-9200-b85f3e97855c}</Project>
       <Name>StockService</Name>
