@@ -17,7 +17,13 @@ namespace DatabaseService.Models
 
         public override string ToString()
         {
-            return $"Symbol: {Symbol.PadRight(20)}Date: {Date.PadRight(20)} High: {High.ToString().PadRight(10)} Low: {Low.ToString().PadRight(10)} Volume: {Volume}";
+            return $"\nSymbol: {Symbol.PadRight(10)}Date: {Date.PadRight(20)}\n" +
+                $"High: {High.ToString().PadRight(10)}  Open: {Open.ToString().PadRight(10)}\n " +
+                $"Low: {Low.ToString().PadRight(10)} Close: {Close.ToString().PadRight(10)}";
         }
+     
+
+    public StockCandle toCandle() => new StockCandle(this);
+       
     }
 }

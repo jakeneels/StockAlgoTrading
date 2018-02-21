@@ -8,21 +8,27 @@ namespace DatabaseService.Models
 {
     public class StockCandle
     {
-        public string Symbol { get; set; }
-        public string Date { get; set; }
-        public double Open { get; set; }
-        public double High { get; set; }
-        public double Low { get; set; }
-        public double Close { get; set; }
-
-        public StockCandle(string symbol, string date, double open, double high, double low, double close)
+        public double UShadow { get; } // Length of ushadow
+        public double LShadow { get; }
+        public double Body { get; }
+        public bool IsFilled { get; }
+ 
+        public StockCandle(Stock stock)
         {
-            Symbol = symbol;
-            Date = date;
-            Open = open;
-            High = high;
-            Low = low;
-            Close = close;
+            if (stock.Open > stock.Close)
+                IsFilled = true;
+            else
+                IsFilled = false;
+
+            Body = IsFilled ? stock.Open - stock.Close : stock.Close - stock.Open;
+            LShadow = IsFilled ? stock.Open - stock.Low : stock.Close - stock.Low;
+            UShadow = IsFilled ? stock.High - stock.Open : stock.High - stock.Close;
+        }
+
+        public override string ToString()
+        {
+            return $"U Shadow: {Math.Round(UShadow,3)}    \nL Shadow: {Math.Round(LShadow,3)}     " +
+                   $"Body: {Math.Round(Body,3)}    IsFilled: {IsFilled}";
         }
     }
 }

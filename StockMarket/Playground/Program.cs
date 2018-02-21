@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using DatabaseService.Models;
 
 namespace Playground
 {
@@ -19,10 +19,18 @@ namespace Playground
            var stockSvc = new IEXStockService();
             // var stock = stockSvc.GetTopsMarketDataHist("aapl",20171015 ); //yyyymmdd
             StockHistoryService stockHist = new StockHistoryService();
+           
+            stockHist.ParseHistoryData("a,st,tntr,,tol,ths,aapl"); ///,ssy,st,spxe,tntr,toca,tol,ths,tsco
+            StockCandle candle = new StockCandle(stockHist.History[1]);
+            Console.WriteLine(stockHist.History[8000].ToString());
+            Console.WriteLine(stockHist.History[8000].toCandle().ToString());
+        
+            candle = new StockCandle(stockHist.History[8001]);
+            Console.WriteLine(stockHist.History[8001].ToString());
+            Console.WriteLine(candle.ToString());
 
-            stockHist.ParseHistMarketDataString("ssw,ssy,st,spxe,spyd,pq,srax,sqzz,spn,spne,spns,spro,sptl,sprt,sph,spke,spil,sph,rmp,rmr,rng,rnn,rnr,re,redu,reed,reem,tmus,tnav,tnh,tntr,toca,tol,ths,tho,thrm,tik,til,ssy,ssys,staf,tpl,tpr,tpre,tpx,tpvy,tpic,ttm,ttd,ttai,ttac,tsu,a,aapl,abr,abmd,abio,abev,abx,ac,aple,apog,jbl,jce,jbr,jax,trx,trvn,trt,tsco");
-
-            stockHist.PrintMarketData();
+            //Console.WriteLine(candle.UShadow);
+            //stockHist.PrintMarketData();
             //stockSvc.GetCompanyData("aapl");
             //Console.WriteLine($" aks price {stock.AskPrice} bid price  {stock.BidPrice}   bid size{stock.BidSize}  ask size {stock.AskSize}");
             Console.ReadKey();
