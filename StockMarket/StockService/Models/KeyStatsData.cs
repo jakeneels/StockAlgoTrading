@@ -10,7 +10,7 @@ namespace StockService.Models
     { // serialize
         public string CompanyName { get; set; }
         public decimal MarketCap { get; set; }
-        public decimal beta { get; set; }
+        public decimal Beta { get; set; }
         public double Week52High { get; set; }
         public double Week52Low { get; set; }
         public double Week52Change { get; set; }
@@ -18,7 +18,7 @@ namespace StockService.Models
         public string ShortDate { get; set; }
         public decimal DividendRate { get; set; }
         public double  DividendYield { get; set; }
-        public string exDividendDate { get; set; }  //date and time ex. "2017-05-11 00:00:00.0"
+        public string ExDividendDate { get; set; }  //date and time ex. "2017-05-11 00:00:00.0"
         public double LatestEPS { get; set; }
         public string LatestEPSDate { get; set; }
         public decimal SharesOutstanding { get; set; }

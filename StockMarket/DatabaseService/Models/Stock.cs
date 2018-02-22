@@ -12,7 +12,7 @@ namespace DatabaseService.Models
         public double High { get; set; }
         public double Low { get; set; }
         public double Close { get; set; }
-        public int OpenInterest { get; set; }           // Open interest is the total number of open or outstanding (not closed or delivered) options and/or futures contracts that exist on a given day, delivered on a particular day
+        public int OpenInterest { get; set; } // Open interest is the total number of open or outstanding (not closed or delivered) options and/or futures contracts that exist on a given day, delivered on a particular day
         public long Volume { get; set; }
 
         public override string ToString()
@@ -23,7 +23,7 @@ namespace DatabaseService.Models
         }
      
 
-    public StockCandle toCandle() => new StockCandle(this);
+        public StockCandle toCandle() => new StockCandle(this);
        
     }
 }
