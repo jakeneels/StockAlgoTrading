@@ -21,9 +21,11 @@ namespace DatabaseService.Models
                 $"High: {High.ToString().PadRight(10)}  Open: {Open.ToString().PadRight(10)}\n " +
                 $"Low: {Low.ToString().PadRight(10)} Close: {Close.ToString().PadRight(10)}";
         }
-     
 
-    public StockCandle toCandle() => new StockCandle(this);
+        public StockCandle ToCandle()
+        {
+            return new StockCandle(this);
+        }
        
     }
 }
