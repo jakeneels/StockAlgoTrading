@@ -4,17 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatabaseService.Models
+namespace StockAnalyzer.Models
 {
     public class StockCandle
     {
-        enum CandleTypes
-        {
-            Unknown = 0,
-            WhiteMarubozu = 1,
-            BlackMarubozu = 2,
-        }
-
         private Stock _stock;
 
         // Length of upper shadow moving up from body

@@ -44,7 +44,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algos\MeanReversion.cs" />
     <Compile Include="Models\CompanyData.cs" />
     <Compile Include="Models\KeyStatsData.cs" />
     <Compile Include="Models\TopsMarketData.cs" />
@@ -55,8 +54,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Analysis\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,14 +1,14 @@
-﻿using StockService;
+﻿using StockAnalyzer.Algorithms;
+using StockAnalyzer.Models;
+using StockAnalyzer.Services;
+using StockService;
 using StockService.Models;
-using DatabaseService.Services; 
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DatabaseService.Models;
-using StockService.Algos;
 
 namespace Playground
 {

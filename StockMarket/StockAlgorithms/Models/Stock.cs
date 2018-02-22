@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DatabaseService.Models
+namespace StockAnalyzer.Models
 {
     [Serializable]
     public class Stock
