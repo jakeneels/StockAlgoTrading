@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace DatabaseService.Models
 {
@@ -12,8 +13,15 @@ namespace DatabaseService.Models
         public double High { get; set; }
         public double Low { get; set; }
         public double Close { get; set; }
-        public int OpenInterest { get; set; }           // Open interest is the total number of open or outstanding (not closed or delivered) options and/or futures contracts that exist on a given day, delivered on a particular day
         public long Volume { get; set; }
+
+        public static void ListToString(List<Stock> list)
+        {
+            foreach (var stock in list)
+            {
+                Console.WriteLine(stock.ToString());
+            }
+        }
 
         public override string ToString()
         {
@@ -23,7 +31,7 @@ namespace DatabaseService.Models
         }
      
 
-    public StockCandle toCandle() => new StockCandle(this);
+    public StockCandle toCandle() => new StockCandle(this);  //create a candle object from current stock
        
     }
 }
