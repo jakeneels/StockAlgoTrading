@@ -53,7 +53,7 @@ namespace StockService
             {
                 String uri = "https://api.iextrading.com/1.0/tops?symbols=";
                 bool isFirstTime = true;
-                foreach(var symbol in symbols)
+                foreach (var symbol in symbols)
                 {
                     if (!isFirstTime)
                     {
@@ -108,7 +108,6 @@ namespace StockService
             return stock;
         }
 
-
         public KeyStatsData GetKeyStats(String symbol) // Needs conversion for KeyStatsDAta
         {
             var symbols = new List<String>();
@@ -119,8 +118,9 @@ namespace StockService
 
         public List<KeyStatsData> GetKeyStats(List<String> symbols)  // Needs conversion for KeyStatsDAta
         {
-            List<KeyStatsData> stocks = null;
+            List<KeyStatsData> stocks = new List<KeyStatsData>();
             string uri = "";
+            ////////////////////
 
             try
             {
@@ -133,17 +133,21 @@ namespace StockService
                     using (StreamReader sr = new StreamReader(stream))
                     {
                         var jsonStr = sr.ReadToEnd();
-                        var jObj = JObject.Parse(jsonStr);
-                        // clip of json {"companyName":"Apple Inc.","marketcap":874912061590,...
-                        //"day200MovingAvg":159.09383,"day50MovingAvg":170.19109,"institutionPercent":62.2,"insiderPercent":null,"shortRatio":1.339517,"year5ChangePercent":1.6239941076928697,"year2ChangePercent":0.7953977509371095,"year1ChangePercent":0.2613752743233359,"ytdChangePercent":0.0009868802972252172,"month6ChangePercent":0.09681317982316645,"month3ChangePercent":0.01441346040710682,"month1ChangePercent":-0.033789084388658526,
-                        string day200avg = jObj.SelectToken("day200MovingAvg").ToString();
-                        Console.WriteLine(day200avg);
-                        //stocks = JsonConvert.DeserializeObject<List<KeyStatsData>>(jsonStr);
-                        //Console.WriteLine(jsonStr);
+                        JObject jobj = new JObject();
+                        var temp = JsonConvert.DeserializeObject<KeyStatsData>(jsonStr,
+                            new JsonSerializerSettings
+                            {
+                                NullValueHandling = NullValueHandling.Include,
+                                Error = delegate (object sender, Newtonsoft.Json.Serialization.ErrorEventArgs earg)
+                                {
+
+                                    earg.ErrorContext.Handled = true;
+                                }
+                            });
+                        stocks.Add(temp);
                     }
-                   // stocks.Add()
+                    // stocks.Add()
                 }
-                
             }
             catch (Exception ex)
             {
@@ -159,11 +163,11 @@ namespace StockService
 
 
 
-       
-        
-        
-        
-        
+
+
+
+
+
         //Depricated??
 
         //public List<TopsMarketData> GetTopsMarketDataHist()

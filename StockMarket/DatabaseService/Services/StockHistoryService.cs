@@ -12,13 +12,14 @@ namespace DatabaseService.Services
 {
     public class StockHistoryService : IDatabaseService
     {
-        public List<Stock> GetStockData(string symbol, int numDaysData)
+        public List<Stock> GetStockData(List<Stock> list,string symbol, int numDaysBack)
         {
             List<Stock> stockData = new List<Stock>(); // to model a collection range or to not
-            foreach (var stock in History)
+            
+            for (int i = History.Count-1; i > numDaysBack; i--)
             {
-
-
+                if(list[i].Symbol == symbol)
+                stockData.Add(History[i]);
             }
             return stockData;
         }
@@ -106,6 +107,11 @@ namespace DatabaseService.Services
             {
                 Console.WriteLine(day.ToString());
             }
+        }
+
+        public List<Stock> GetStockData(string symbol, int numDaysBack)
+        {
+            throw new NotImplementedException();
         }
     }
 }

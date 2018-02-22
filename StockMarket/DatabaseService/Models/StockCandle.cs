@@ -8,12 +8,12 @@ namespace DatabaseService.Models
 {
     public class StockCandle
     {
-        public double UShadow { get; } // Length of ushadow
-        public double LShadow { get; }
+        public double UShadow { get; } // Length of upper shadow moving up from body
+        public double LShadow { get; } // Length of lower shadow moving down from body,, could make this value neg
         public double Body { get; }
-        public bool IsFilled { get; }
+        public bool IsFilled { get; }  // filled indicates more sold than bought that day
  
-        public StockCandle(Stock stock)
+        public StockCandle(Stock stock) //create stock candle, also method exists in Stock class stock.ToCandle()
         {
             if (stock.Open > stock.Close)
                 IsFilled = true;
