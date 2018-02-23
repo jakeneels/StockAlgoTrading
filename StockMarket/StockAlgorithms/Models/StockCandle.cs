@@ -45,6 +45,12 @@ namespace StockAnalyzer.Models
             }
         }
 
+        // Needs to be implemented
+        public bool IsDoji()
+        {
+            return false;
+        }
+
         //create stock candle, also method exists in Stock class stock.ToCandle()
         public StockCandle(Stock stock) 
         {
