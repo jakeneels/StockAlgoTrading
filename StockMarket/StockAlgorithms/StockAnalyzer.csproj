@@ -47,6 +47,7 @@
     <Compile Include="Models\StockCandle.cs" />
     <Compile Include="Models\StockDecision.cs" />
     <Compile Include="Algorithms\StockPattern.cs" />
+    <Compile Include="Models\Ticker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interfaces\IDatabaseService.cs" />
     <Compile Include="Services\DatabaseService.cs" />

@@ -72,7 +72,6 @@ namespace StockService
                     var jsonStr = sr.ReadToEnd();
                     stocks = JsonConvert.DeserializeObject<List<TopsMarketData>>(jsonStr);
                     Console.WriteLine(jsonStr);
-
                 }
             }
             catch (Exception ex)
@@ -97,7 +96,6 @@ namespace StockService
                     var jsonStr = sr.ReadToEnd();
                     stock = JsonConvert.DeserializeObject<CompanyData>(jsonStr);
                     Console.WriteLine(jsonStr);
-
                 }
             }
             catch (Exception ex)
