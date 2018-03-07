@@ -14,6 +14,8 @@ namespace StockAlgorithms.Services
     {
         private const string connectionString = @"Data Source=.\SQLEXPRESS;Initial Catalog=StockMarket;Integrated Security=true";
 
+        private const string sqlCreateTicker = @"INSERT INTO ticker(symbol,companyName,exchange,industry,website,description,ceo)";
+
         public List<Stock> GetStockData(string symbol, int numDaysBack)
         {
             throw new NotImplementedException();
