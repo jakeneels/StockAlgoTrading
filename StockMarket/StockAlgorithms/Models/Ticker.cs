@@ -22,8 +22,8 @@ namespace StockAlgorithms.Models
         {
             return $"\nSymbol: {symbol.PadRight(10)}Company Name: {companyName.PadRight(20)}\n" +
                     $"Exchange: {exchange.ToString().PadRight(10)}\n " +
-                    $"Industry: {industry.ToString().PadRight(10)} Website: {website.ToString().PadRight(10)}"+
-                    $"Description: {description. PadRight(10)} CEO: {ceo}}";
+                    $"Industry: {industry.ToString().PadRight(10)} Website: {website.ToString().PadRight(10)} \n"+
+                    $"Description: {description.PadRight(10)} CEO: {ceo}";
         }
     }
 
