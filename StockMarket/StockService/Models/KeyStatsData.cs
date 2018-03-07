@@ -18,8 +18,10 @@ namespace StockService.Models
         public long ShortInterest { get; set; }
         public string ShortDate { get; set; }
         public decimal DividendRate { get; set; }
+
         public double DividendYield { get; set; }
         public string exDividendDate { get; set; }  //date and time ex. "2017-05-11 00:00:00.0"
+
         public double LatestEPS { get; set; }
         public string LatestEPSDate { get; set; }
         public decimal SharesOutstanding { get; set; }
