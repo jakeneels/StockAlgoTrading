@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using DatabaseService.Models;
+using StockAnalyzer.Models;
 
-namespace DatabaseService
+namespace StockAnalyzer
 {
     interface IDatabaseService
     {

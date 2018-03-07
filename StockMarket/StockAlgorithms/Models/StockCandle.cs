@@ -4,17 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatabaseService.Models
+namespace StockAnalyzer.Models
 {
     public class StockCandle
     {
-        enum CandleTypes
-        {
-            Unknown = 0,
-            WhiteMarubozu = 1,
-            BlackMarubozu = 2,
-        }
-
         private Stock _stock;
 
         // Length of upper shadow moving up from body
@@ -50,6 +43,12 @@ namespace DatabaseService.Models
             {
                 return (_stock.Open > _stock.Close) ? true : false;
             }
+        }
+
+        // Needs to be implemented
+        public bool IsDoji()
+        {
+            return false;
         }
 
         //create stock candle, also method exists in Stock class stock.ToCandle()

@@ -4,11 +4,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DatabaseService.Models;
+using StockAnalyzer.Models;
 using StockService.Models;
 
 
-namespace DatabaseService.Services
+namespace StockAnalyzer.Services
 {
     public class StockHistoryService : IDatabaseService
     {

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Models\Stock.cs" />
     <Compile Include="Models\StockCandle.cs" />
+    <Compile Include="Models\StockDecision.cs" />
     <Compile Include="Services\Depricated\HistDatasetService.cs" />
     <Compile Include="Services\IDatabaseService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
