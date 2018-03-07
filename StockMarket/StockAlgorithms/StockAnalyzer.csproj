@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Algorithms\MeanReversion.cs" />
     <Compile Include="Models\ClusterCandle.cs" />
+    <Compile Include="Models\Sector.cs" />
     <Compile Include="Models\Stock.cs" />
     <Compile Include="Models\StockCandle.cs" />
     <Compile Include="Models\StockDecision.cs" />
