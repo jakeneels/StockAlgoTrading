@@ -12,7 +12,7 @@ namespace StockAnalyzer.Services
 {
     public class StockHistoryService : IDatabaseService
     {
-        public List<Stock> GetStockData(List<Stock> list,string symbol, int numDaysBack)
+        public List<Stock> GetStockData(List<Stock> list, string symbol, int numDaysBack)
         {
             List<Stock> stockData = new List<Stock>(); // to model a collection range or to not
             
@@ -111,7 +111,16 @@ namespace StockAnalyzer.Services
 
         public List<Stock> GetStockData(string symbol, int numDaysBack)
         {
-            throw new NotImplementedException();
+            List<Stock> stockData = new List<Stock>(); // to model a collection range or to not
+
+
+
+            for (int i = History.Count - 1; i > numDaysBack; i--)
+            {
+                //if (list[i].Symbol == symbol)
+                   // stockData.Add(History[i]);
+            }
+            return stockData;
         }
     }
 }
