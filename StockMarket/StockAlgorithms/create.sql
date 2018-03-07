@@ -1,3 +1,4 @@
+CREATE DATABASE StockMarket
 
 CREATE TABLE Ticker
 (
@@ -6,7 +7,7 @@ CREATE TABLE Ticker
 	CompanyName VARCHAR(75) NOT NULL,
 	Exchange VARCHAR(40) NOT NULL,
 	Industry VARCHAR(30) NOT NULL,
-	Website VARCHAR(75) NOT NULL,
+	Website VARCHAR(100) NOT NULL,
 	Description VARCHAR(200) NOT NULL,
 
 	CONSTRAINT pk_ticker PRIMARY KEY (Id)
